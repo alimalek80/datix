@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h1 class="mb-4">Create New Post</h1>
+    <h1 class="mb-4">{% if post %}Edit Post{% else %}Create New Post{% endif %}</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="mb-3">
@@ -15,19 +15,33 @@
         <div class="mb-3">
             <label for="{{ form.image.id_for_label }}" class="form-label">Image</label>
             {{ form.image }}
+            {% if post and post.image %}
+                <div class="mt-2">
+                    <p>Current Image:</p>
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 200px;">
+                </div>
+            {% endif %}
         </div>
         <div class="mb-3">
             <label for="{{ form.category.id_for_label }}" class="form-label">Category</label>
             {{ form.category }}
         </div>
         <div class="mb-3">
+            <label for="{{ form.new_category.id_for_label }}" class="form-label">Add New Category</label>
+            {{ form.new_category }}
+        </div>
+        <div class="mb-3">
             <label for="{{ form.subcategory.id_for_label }}" class="form-label">Subcategory</label>
             {{ form.subcategory }}
         </div>
         <div class="mb-3">
-            <label for="{{ form.tags.id_for_label }}" class="form-label">Tags</label>
-            {{ form.tags }}
+            <label for="{{ form.new_subcategory.id_for_label }}" class="form-label">Add New Subcategory</label>
+            {{ form.new_subcategory }}
         </div>
-        <button type="submit" class="btn btn-primary">Create Post</button>
+        <div class="mb-3">
+            <label for="{{ form.tag_names.id_for_label }}" class="form-label">Tags (comma-separated)</label>
+            {{ form.tag_names }}
+        </div>
+        <button type="submit" class="btn btn-primary">{% if post %}Update Post{% else %}Create Post{% endif %}</button>
     </form>
 {% endblock %}
