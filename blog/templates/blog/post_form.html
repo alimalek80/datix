@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1 class="mb-4">Create New Post</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="{{ form.title.id_for_label }}" class="form-label">Title</label>
+            {{ form.title }}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.content.id_for_label }}" class="form-label">Content</label>
+            {{ form.content }}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.image.id_for_label }}" class="form-label">Image</label>
+            {{ form.image }}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.category.id_for_label }}" class="form-label">Category</label>
+            {{ form.category }}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.subcategory.id_for_label }}" class="form-label">Subcategory</label>
+            {{ form.subcategory }}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.tags.id_for_label }}" class="form-label">Tags</label>
+            {{ form.tags }}
+        </div>
+        <button type="submit" class="btn btn-primary">Create Post</button>
+    </form>
+{% endblock %}
