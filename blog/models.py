@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
+from markdownx.models import MarkdownxField
+from markdownx.utils import markdownify
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -43,10 +45,12 @@ class Tag(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    content = models.TextField()
+    content = MarkdownxField()
     image = models.ImageField(upload_to='post_images/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(unique=True, blank=True)
+
+    # Relationships
     category = models.ForeignKey(
         Category,
         related_name='posts',
@@ -74,6 +78,13 @@ class Post(models.Model):
                 num += 1
             self.slug = unique_slug
         super().save(*args, **kwargs)
+
+    @property
+    def formatted_markdown(self):
+        """
+        Convert the Markdown content to HTML.
+        """
+        return markdownify(self.content)
 
     def __str__(self):
         return self.title

@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'markdownx',
 
 ]
 
@@ -108,7 +109,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -117,4 +120,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MARKDOWNX_MARKDOWN_EXTENSIONS = [
+    'markdown.extensions.extra',  # Optional: Adds tables, footnotes, etc.
+    'markdown.extensions.codehilite',  # Enables syntax highlighting
+    'markdown.extensions.fenced_code',  # Ensures fenced code blocks (```) work
+    'markdown.extensions.nl2br',
+    'pymdownx.superfences',  # Advanced fenced code blocks
+]
+
+# Authentication
+LOGIN_URL = '/signin/'  # Redirect unauthenticated users here
+LOGIN_REDIRECT_URL = '/posts/'  # After login, go to post list
+LOGOUT_REDIRECT_URL = '/posts/'  # After logout, go to post list
 

@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48638a76-2aa6-4531-877c-7678bffbb5cd" name="Changes" comment="initial commit">
+    <list default="true" id="48638a76-2aa6-4531-877c-7678bffbb5cd" name="Changes" comment="Added post editing feature and enhanced category/tag management&#10;&#10;- Enabled post editing directly on the post detail page, restricted to the post author.&#10;- Updated the post creation/edit form to allow adding categories, subcategories, and tags directly.&#10;- Implemented a comma-separated tag input that automatically splits tags.">
+      <change afterPath="$PROJECT_DIR$/static/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datix/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/datix/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datix/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/datix/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +27,7 @@
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -61,9 +65,11 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -115,7 +121,10 @@
       <option name="presentableId" value="Default" />
       <updated>1739649538433</updated>
       <workItem from="1739649539362" duration="8149000" />
-      <workItem from="1739659714081" duration="3750000" />
+      <workItem from="1739659714081" duration="4015000" />
+      <workItem from="1739690318330" duration="4619000" />
+      <workItem from="1739906312441" duration="4919000" />
+      <workItem from="1740258595548" duration="5227000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -125,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739657736688</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added post editing feature and enhanced category/tag management&#10;&#10;- Enabled post editing directly on the post detail page, restricted to the post author.&#10;- Updated the post creation/edit form to allow adding categories, subcategories, and tags directly.&#10;- Implemented a comma-separated tag input that automatically splits tags.">
+      <option name="closed" value="true" />
+      <created>1739663756921</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739663756921</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +150,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="Added post editing feature and enhanced category/tag management&#10;&#10;- Enabled post editing directly on the post detail page, restricted to the post author.&#10;- Updated the post creation/edit form to allow adding categories, subcategories, and tags directly.&#10;- Implemented a comma-separated tag input that automatically splits tags." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added post editing feature and enhanced category/tag management&#10;&#10;- Enabled post editing directly on the post detail page, restricted to the post author.&#10;- Updated the post creation/edit form to allow adding categories, subcategories, and tags directly.&#10;- Implemented a comma-separated tag input that automatically splits tags." />
   </component>
 </project>

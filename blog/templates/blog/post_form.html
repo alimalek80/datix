@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %}
-
+{% load static %} <!-- Load static files -->
 {% block content %}
     <h1 class="mb-4">{% if post %}Edit Post{% else %}Create New Post{% endif %}</h1>
     <form method="post" enctype="multipart/form-data">

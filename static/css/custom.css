@@ -1,0 +1,12 @@
+.note-box {
+    background-color: #e6f3ff;
+    border-left: 4px solid #3399ff;
+    padding: 10px;
+    margin: 10px 0;
+}
+.warning-box {
+    background-color: #fff0e6;
+    border-left: 4px solid #ff6600;
+    padding: 10px;
+    margin: 10px 0;
+}

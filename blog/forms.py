@@ -1,5 +1,6 @@
 from django import forms
 from .models import Post, Category, Subcategory, Tag
+from markdownx.fields import MarkdownxFormField
 
 class PostForm(forms.ModelForm):
     new_category = forms.CharField(
@@ -22,6 +23,8 @@ class PostForm(forms.ModelForm):
         label="Tags (comma-separated)",
         help_text="Enter up to 5 tags separated by commas (e.g., Python, Django, Web)."
     )
+
+    content = MarkdownxFormField()  # Use MarkdownxFormField for the content field
 
     class Meta:
         model = Post
